@@ -11,8 +11,16 @@ package modelo.pessoa;
 public class Vendedor extends Funcionario{
     public double comissaoPorVenda;
     
-    public Vendedor(String nome, int telefone, String endereco, String cpf, double salario, double comissaoPorVenda){
+    public Vendedor(String nome, long telefone, String endereco, long cpf, double salario, double comissaoPorVenda){
         super(nome, telefone, endereco, cpf, salario);
         comissaoPorVenda = this.comissaoPorVenda;
+    }
+
+    public double getComissaoPorVenda() {
+        return comissaoPorVenda;
+    }
+
+    public void setComissaoPorVenda(double comissaoPorVenda) {
+        this.comissaoPorVenda = comissaoPorVenda;
     }
 }

@@ -14,5 +14,32 @@ public class Estoque {
         capacidadeOcupada = this.capacidadeOcupada;
     }
     
-    
+    public Estoque(int capacidadeTotal, int capacidadeOcupada) {
+        capacidadeTotal = this.capacidadeTotal;
+        capacidadeOcupada = this.capacidadeOcupada;
+    }
+
+    public List<Veiculo> getVeiculosDisponiveis() {
+        return veiculosDisponiveis;
+    }
+
+    public void setVeiculosDisponiveis(List<Veiculo> veiculosDisponiveis) {
+        this.veiculosDisponiveis = veiculosDisponiveis;
+    }
+
+    public int getCapacidadeTotal() {
+        return capacidadeTotal;
+    }
+
+    public void setCapacidadeTotal(int capacidadeTotal) {
+        this.capacidadeTotal = capacidadeTotal;
+    }
+
+    public int getCapacidadeOcupada() {
+        return capacidadeOcupada;
+    }
+
+    public void setCapacidadeOcupada(int capacidadeOcupada) {
+        this.capacidadeOcupada = capacidadeOcupada;
+    }
 }

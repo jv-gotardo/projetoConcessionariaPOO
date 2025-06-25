@@ -9,10 +9,18 @@ package modelo.pessoa;
  * @author jvito
  */
 public class ClienteJuridico extends Cliente {
-    private int cnpj;
+    private long cnpj;
     
-    public ClienteJuridico(String nome, int telefone, String endereco, double rendaMensal, int cnpj){
+    public ClienteJuridico(String nome, long telefone, String endereco, double rendaMensal, long cnpj){
         super(nome, telefone, endereco, rendaMensal);
         cnpj = this.cnpj;
+    }
+
+    public long getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(long cnpj) {
+        this.cnpj = cnpj;
     }
 }

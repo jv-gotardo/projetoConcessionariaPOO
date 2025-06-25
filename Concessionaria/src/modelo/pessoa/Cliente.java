@@ -11,8 +11,16 @@ package modelo.pessoa;
 public class Cliente extends Pessoa{
     protected double rendaMensal;
     
-    public Cliente(String nome, int telefone, String endereco, double rendaMensal){
+    public Cliente(String nome, long telefone, String endereco, double rendaMensal){
         super(nome, telefone, endereco);
         rendaMensal = this.rendaMensal;
+    }
+
+    public double getRendaMensal() {
+        return rendaMensal;
+    }
+
+    public void setRendaMensal(double rendaMensal) {
+        this.rendaMensal = rendaMensal;
     }
 }

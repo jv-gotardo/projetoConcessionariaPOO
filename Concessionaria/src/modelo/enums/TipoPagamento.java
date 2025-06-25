@@ -9,9 +9,15 @@ package modelo.enums;
  * @author jvito
  */
 public enum TipoPagamento {
-    CARTAO_CREDITO,
-    CARTAO_DEBITO,
-    PIX,
-    DINHEIRO,
-    BOLETO_BANCARIO;
+    CARTAO_CREDITO("Cartão de Crédito"),
+    CARTAO_DEBITO("Cartão de Débito"),
+    PIX("PIX"),
+    DINHEIRO("Dinheiro"),
+    BOLETO_BANCARIO("Boleto Bancário");
+
+    public final String CODIGO;
+    
+    TipoPagamento(String codigoString){
+        this.CODIGO = codigoString;
+    }
 }

@@ -9,19 +9,25 @@ package modelo.enums;
  * @author jvito
  */
 public enum TipoVeiculo {
-    CICLOMOTOR,
-    MOTONETA,
-    MOTOCICLETA,
-    TRICICLO,
-    AUTOMOVEL,
-    MICRO_ONIBUS,
-    ONIBUS,
-    REBOQUE,
-    SEMIRREBOQUE,
-    CAMIONETA,
-    CAMINHAO,
-    TRATOR, 
-    QUADRICICLO,
-    CAMINHONETE,
-    UTILITARIO
+    CICLOMOTOR("Ciclomotor"),
+    MOTONETA("Motoneta"),
+    MOTOCICLETA("Motocicleta"),
+    TRICICLO("Triciclo"),
+    AUTOMOVEL("Automóvel"),
+    MICRO_ONIBUS("Micro-ônibus"),
+    ONIBUS("Ônibus"),
+    REBOQUE("Reboque"),
+    SEMIRREBOQUE("Semirreboque"),
+    CAMIONETA("Camioneta"),
+    CAMINHAO("Caminhão"),
+    TRATOR("Trator"),
+    QUADRICICLO("Quadriciclo"),
+    CAMINHONETE("Caminhonete"),
+    UTILITARIO("Utilitário");
+    
+    public final String CODIGO;
+    
+    TipoVeiculo(String codigoString){
+        this.CODIGO = codigoString;
+    }
 }

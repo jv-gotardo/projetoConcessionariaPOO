@@ -9,10 +9,18 @@ package modelo.pessoa;
  * @author jvito
  */
 public class ClienteFisico extends Cliente {
-    private int cpf;
+    private long cpf;
     
-    public ClienteFisico(String nome, int telefone, String endereco, double rendaMensal, int cpf){
+    public ClienteFisico(String nome, long telefone, String endereco, double rendaMensal, long cpf){
         super(nome, telefone, endereco, rendaMensal);
         cpf = this.cpf;
+    }
+
+    public long getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(long cpf) {
+        this.cpf = cpf;
     }
 }

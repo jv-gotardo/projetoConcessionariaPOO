@@ -23,4 +23,36 @@ public class Contrato {
         dataAssinatura = this.dataAssinatura;
         dataVencimento = this.dataVencimentoPrevista;
     }
+
+    public Financiamento getFinanciamento() {
+        return financiamento;
+    }
+
+    public void setFinanciamento(Financiamento financiamento) {
+        this.financiamento = financiamento;
+    }
+
+    public String getTermos_Contrato() {
+        return termos_Contrato;
+    }
+
+    public void setTermos_Contrato(String termos_Contrato) {
+        this.termos_Contrato = termos_Contrato;
+    }
+
+    public LocalDate getDataAssinatura() {
+        return dataAssinatura;
+    }
+
+    public void setDataAssinatura(LocalDate dataAssinatura) {
+        this.dataAssinatura = dataAssinatura;
+    }
+
+    public LocalDate getDataVencimentoPrevista() {
+        return dataVencimentoPrevista;
+    }
+
+    public void setDataVencimentoPrevista(LocalDate dataVencimentoPrevista) {
+        this.dataVencimentoPrevista = dataVencimentoPrevista;
+    }
 }

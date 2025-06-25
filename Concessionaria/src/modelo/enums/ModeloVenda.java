@@ -9,8 +9,14 @@ package modelo.enums;
  * @author jvito
  */
 public enum ModeloVenda {
-    A_VISTA, 
-    A_PRAZO,
-    CONSORCIO,
-    PARCELADO
+    A_VISTA("A Vista"), 
+    A_PRAZO("A Prazo"),
+    CONSORCIO("Consorcio"),
+    PARCELADO("Parcelado");
+    
+    public final String CODIGO;
+    
+    ModeloVenda(String codigoString){
+        this.CODIGO = codigoString;
+    }
 }

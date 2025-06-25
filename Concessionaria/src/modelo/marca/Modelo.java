@@ -13,7 +13,7 @@ import modelo.enums.TipoCarroceria;
  *
  * @author jvito
  */
-public abstract class Modelo extends Marca {
+public class Modelo extends Marca {
     protected String nomeModelo;
     protected TipoVeiculo tipoVeiculo;
     protected TipoCarroceria tipoCarroceria; 
@@ -31,4 +31,39 @@ public abstract class Modelo extends Marca {
         anoFabricacao = this.anoFabricacao;
         cor = this.cor;
     }
+
+    public String getNomeModelo() {
+        return nomeModelo;
+    }
+
+    public TipoVeiculo getTipoVeiculo() {
+        return tipoVeiculo;
+    }
+
+    public TipoCarroceria getTipoCarroceria() {
+        return tipoCarroceria;
+    }
+
+    public String getTransmissao() {
+        return transmissao;
+    }
+
+    public int getAnoFabricacao() {
+        return anoFabricacao;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setTipoVeiculo(TipoVeiculo tipoVeiculo) {
+        this.tipoVeiculo = tipoVeiculo;
+    }
+
+    public void setTipoCarroceria(TipoCarroceria tipoCarroceria) {
+        this.tipoCarroceria = tipoCarroceria;
+    }
+    
+    
+    
 }
