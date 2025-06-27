@@ -42,9 +42,9 @@ public class VendaService {
         System.out.print("Veículo: "); vs.lerVeiculo(venda.getVeiculo());
         System.out.print("Vendedor: "); ps.lerFuncionario(venda.getVendedor());
         System.out.print("Cliente: "); ps.lerCliente(venda.getCliente());
-        System.out.print("Quantidade comprada: " + venda.getQuantidade());
-        System.out.print("Data da Venda: " + gs.imprimirData(venda.getDataVenda()));
-        System.out.print("Preço Final da Venda: R$" + venda.getPrecoFinal());
+        System.out.println("Quantidade comprada: " + venda.getQuantidade());
+        System.out.println("Data da Venda: " + gs.imprimirData(venda.getDataVenda()));
+        System.out.println("Preço Final da Venda sem Juros: R$" + venda.getPrecoFinal());
         System.out.println("--------------");
     }
     

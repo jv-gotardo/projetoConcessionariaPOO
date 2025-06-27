@@ -9,6 +9,7 @@ import java.util.Scanner;
 import modelo.Financiamento;
 import modelo.Pagamento;
 import modelo.Venda;
+import modelo.enums.ModeloVenda;
 import modelo.enums.StatusPagamento;
 import modelo.enums.TipoPagamento;
 
@@ -41,12 +42,15 @@ public class PagamentoService {
     
     public boolean pagarEntrada(Financiamento financiamento){
         System.out.println("Aplicação especial para pagamento da entrada");
+        if(!financiamento.getModeloVenda().equals(ModeloVenda.A_PRAZO)){
+            return true;
+        }
         criarPagamento(financiamento.getVenda());
         financiamento.setEntradaPaga(true);
         return true;
     }
     
-    public boolean validarPagamento(Pagamento pagamento, Financiamento financiamento){
+    public boolean validarPagamento(Venda venda, Pagamento pagamento, Financiamento financiamento){
         if(!financiamento.isEntradaPaga()){
             System.out.println("A entrada deve ser paga antes de qualquer parcela");
             return false;
@@ -60,6 +64,7 @@ public class PagamentoService {
             System.out.println("Pagamento aprovado!");
             pagamento.setStatusPagamento(StatusPagamento.PAGO);
             financiamento.setNumeroParcelas(financiamento.getNumeroParcelas()-1);
+            adicionarPagamento(venda, pagamento);
         }
         return true;
     }

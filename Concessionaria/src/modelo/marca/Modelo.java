@@ -1,6 +1,5 @@
 package modelo.marca;
 
-import java.time.LocalDate;
 import modelo.enums.TipoVeiculo;
 import modelo.enums.TipoCarroceria;
 
@@ -20,17 +19,6 @@ public class Modelo extends Marca {
     protected String transmissao;
     protected int anoFabricacao;
     protected String cor;
-    
-    public Modelo(String nome, String paisOrigem, int cnpj, String modeloNome, TipoVeiculo tipoVeiculo,
-                  TipoCarroceria tipoCarroceria, String transmissao, int anoFabricacao, String cor){
-        super(nome, paisOrigem, cnpj);
-        modeloNome = this.nomeModelo;
-        tipoVeiculo = this.tipoVeiculo;
-        tipoCarroceria = this.tipoCarroceria;
-        transmissao = this.transmissao;
-        anoFabricacao = this.anoFabricacao;
-        cor = this.cor;
-    }
 
     public String getNomeModelo() {
         return nomeModelo;
@@ -62,6 +50,16 @@ public class Modelo extends Marca {
 
     public void setTipoCarroceria(TipoCarroceria tipoCarroceria) {
         this.tipoCarroceria = tipoCarroceria;
+    }
+
+    public Modelo(String nomeModelo, TipoVeiculo tipoVeiculo, TipoCarroceria tipoCarroceria, String transmissao, int anoFabricacao, String cor, String nome, String paisOrigem, long cnpj) {
+        super(nome, paisOrigem, cnpj);
+        this.nomeModelo = nomeModelo;
+        this.tipoVeiculo = tipoVeiculo;
+        this.tipoCarroceria = tipoCarroceria;
+        this.transmissao = transmissao;
+        this.anoFabricacao = anoFabricacao;
+        this.cor = cor;
     }
     
     

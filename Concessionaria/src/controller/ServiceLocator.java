@@ -39,6 +39,5 @@ public class ServiceLocator {
         this.pessoaService = new PessoaService();
         this.veiculoService = new VeiculoService();
         this.vendaService = new VendaService();
-        
     }
 }

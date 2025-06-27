@@ -17,8 +17,8 @@ public class Gerente extends Funcionario{
     public Gerente(String nome, long telefone, String endereco, long cpf, double salario, 
             LocalDate tempoCargo, double bonusTempoCargo){
         super(nome, telefone, endereco, cpf, salario);
-        tempoCargo = this.tempoCargo;
-        bonusTempoCargo = this.bonusTempoCargo;
+        this.tempoCargo = tempoCargo;
+        this.bonusTempoCargo = bonusTempoCargo;
     }
 
     public LocalDate getTempoCargo() {
@@ -35,15 +35,5 @@ public class Gerente extends Funcionario{
 
     public void setBonusTempoCargo(double bonusTempoCargo) {
         this.bonusTempoCargo = bonusTempoCargo;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-    
-    
+    }  
 }

@@ -13,7 +13,7 @@ public class Vendedor extends Funcionario{
     
     public Vendedor(String nome, long telefone, String endereco, long cpf, double salario, double comissaoPorVenda){
         super(nome, telefone, endereco, cpf, salario);
-        comissaoPorVenda = this.comissaoPorVenda;
+        this.comissaoPorVenda = comissaoPorVenda;
     }
 
     public double getComissaoPorVenda() {

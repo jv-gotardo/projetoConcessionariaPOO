@@ -15,15 +15,14 @@ public class Veiculo extends Modelo {
     private statusVeiculo status;
     private double quilometragem;
     private double precoBruto;
-    
-    public Veiculo(int chassi, String nome, String paisOrigem, int cnpj, String modeloNome, TipoVeiculo tipoVeiculo, 
-            TipoCarroceria tipoCarroceria, String transmissao, int anoFabricacao, String cor, statusVeiculo status, 
-            double quilometragem, double precoBruto){
-        super(nome, paisOrigem, cnpj, modeloNome, tipoVeiculo, tipoCarroceria, transmissao, anoFabricacao, cor);
-        chassi = this.chassi;
-        status = this.status;
-        quilometragem = this.quilometragem;
-        precoBruto = this.precoBruto;
+
+    public Veiculo(int chassi, statusVeiculo status, double quilometragem, double precoBruto, String nomeModelo, TipoVeiculo tipoVeiculo, 
+            TipoCarroceria tipoCarroceria, String transmissao, int anoFabricacao, String cor, String nome, String paisOrigem, long cnpj) {
+        super(nomeModelo, tipoVeiculo, tipoCarroceria, transmissao, anoFabricacao, cor, nome, paisOrigem, cnpj);
+        this.chassi = chassi;
+        this.status = status;
+        this.quilometragem = quilometragem;
+        this.precoBruto = precoBruto;
     }
 
     public double getPrecoBruto() {

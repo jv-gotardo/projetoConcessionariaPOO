@@ -15,13 +15,12 @@ public class Contrato {
     private String termos_Contrato;
     private LocalDate dataAssinatura;
     private LocalDate dataVencimentoPrevista;
-    
-    public Contrato(Financiamento financiamento, String termos_Contrato, LocalDate dataAssinatura,
-            LocalDate dataVencimento){
-        financiamento = this.financiamento;
-        termos_Contrato = this.termos_Contrato;
-        dataAssinatura = this.dataAssinatura;
-        dataVencimento = this.dataVencimentoPrevista;
+
+    public Contrato(Financiamento financiamento, String termos_Contrato, LocalDate dataAssinatura, LocalDate dataVencimentoPrevista) {
+        this.financiamento = financiamento;
+        this.termos_Contrato = termos_Contrato;
+        this.dataAssinatura = dataAssinatura;
+        this.dataVencimentoPrevista = dataVencimentoPrevista;
     }
 
     public Financiamento getFinanciamento() {

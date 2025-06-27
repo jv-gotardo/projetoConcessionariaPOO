@@ -12,9 +12,9 @@ package modelo.marca;
 public class Marca {
     protected String nome;
     protected String paisOrigem; 
-    protected int cnpj; //Ou equivalente para registro de pessoa jurídica
+    protected long cnpj; //Ou equivalente para registro de pessoa jurídica
     
-    public Marca(String nome, String paisOrigem, int cnpj){
+    public Marca(String nome, String paisOrigem, long cnpj){
         this.nome = nome;
         this.paisOrigem = paisOrigem;
         this.cnpj = cnpj;
@@ -36,11 +36,11 @@ public class Marca {
         this.paisOrigem = paisOrigem;
     }
 
-    public int getCnpj() {
+    public long getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(long cnpj) {
         this.cnpj = cnpj;
     }
 }

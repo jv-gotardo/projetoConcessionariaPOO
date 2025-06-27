@@ -65,7 +65,7 @@ public class FinanciamentoService {
         valorParcelaBruto = (venda.getPrecoFinal() - valorEntrada) / numeroParcelas;
         System.out.println("O valor da parcela bruto é R$" + valorParcelaBruto);
         Financiamento financiamento = new Financiamento(
-                venda, valorEntrada, numeroParcelas, valorParcelaBruto, juros, banco, false, modeloVenda);
+                venda, valorEntrada, numeroParcelas, valorParcelaBruto, banco, false, modeloVenda, juros);
         if(modeloVenda.equals(ModeloVenda.A_VISTA)){
             financiamento.setDataProximoPagamento(LocalDate.now());
         }else{

@@ -18,13 +18,12 @@ public class Pagamento {
     private double valorPago;
     private LocalDate dataPagamento;
     private StatusPagamento statusPagamento;
-    
-    public Pagamento(Venda venda, TipoPagamento tipoPagamento, double valorPago,
-            LocalDate dataPagamento){
-        venda = this.venda;
-        tipoPagamento = this.tipoPagamento;
-        valorPago = this.valorPago;
-        dataPagamento = this.dataPagamento;
+
+    public Pagamento(Venda venda, TipoPagamento tipoPagamento, double valorPago, LocalDate dataPagamento) {
+        this.venda = venda;
+        this.tipoPagamento = tipoPagamento;
+        this.valorPago = valorPago;
+        this.dataPagamento = dataPagamento;
     }
 
     public Venda getVenda() {

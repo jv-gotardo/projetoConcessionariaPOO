@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import modelo.marca.Veiculo;
 import java.util.List;
 
@@ -9,9 +10,9 @@ public class Estoque {
     private int capacidadeOcupada;
 
     public Estoque(List<Veiculo> veiculosDisponiveis, int capacidadeTotal, int capacidadeOcupada) {
-        veiculosDisponiveis = this.veiculosDisponiveis;
-        capacidadeTotal = this.capacidadeTotal;
-        capacidadeOcupada = this.capacidadeOcupada;
+        this.veiculosDisponiveis = veiculosDisponiveis;
+        this.capacidadeTotal = capacidadeTotal;
+        this.capacidadeOcupada = capacidadeOcupada;
     }
     
     public Estoque(int capacidadeTotal, int capacidadeOcupada) {

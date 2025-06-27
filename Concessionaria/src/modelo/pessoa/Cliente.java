@@ -13,7 +13,7 @@ public class Cliente extends Pessoa{
     
     public Cliente(String nome, long telefone, String endereco, double rendaMensal){
         super(nome, telefone, endereco);
-        rendaMensal = this.rendaMensal;
+        this.rendaMensal = rendaMensal;
     }
 
     public double getRendaMensal() {

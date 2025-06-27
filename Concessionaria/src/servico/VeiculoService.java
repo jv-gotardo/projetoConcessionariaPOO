@@ -34,14 +34,14 @@ public class VeiculoService {
     
     public Marca criaMarca(){
         String nome, paisOrigem;
-        int cnpj;
+        long cnpj;
         System.out.println("Criação de Marca");
         System.out.print("Nome: ");
         nome = sc.nextLine();
         System.out.print("País de Origem: ");
         paisOrigem = sc.nextLine();
         System.out.print("CNPJ ou Equivalente: ");
-        cnpj = sc.nextInt();
+        cnpj = sc.nextLong(); sc.nextLine();
         marcaCriada = true;
         return new Marca(nome, paisOrigem, cnpj);
     }
@@ -69,8 +69,8 @@ public class VeiculoService {
         sc.nextLine();
         System.out.print("Cor: ");
         cor = sc.nextLine();
-        return new Modelo(marca.getNome(), marca.getPaisOrigem(), marca.getCnpj(), modeloNome, veiculo, carroceria, transmissao,
-            anoFabricacao, cor);
+        return new Modelo(modeloNome, veiculo, carroceria, transmissao,
+            anoFabricacao, cor, marca.getNome(), marca.getPaisOrigem(), marca.getCnpj());
     }
     
     public Veiculo criaVeiculo(Marca marca, Modelo modelo){
@@ -82,10 +82,9 @@ public class VeiculoService {
         System.out.print("Preço Bruto do Veículo: R$");
         precoBruto = sc.nextDouble();
         int chassi = ThreadLocalRandom.current().nextInt();
-        return new Veiculo(chassi, marca.getNome(), marca.getPaisOrigem(), marca.getCnpj(),
+        return new Veiculo(chassi, defineStatusVeiculo(quilometragem, 2025 - modelo.getAnoFabricacao()), quilometragem, precoBruto, 
             modelo.getNomeModelo(), modelo.getTipoVeiculo(), modelo.getTipoCarroceria(), modelo.getTransmissao(),
-            modelo.getAnoFabricacao(), modelo.getCor(), defineStatusVeiculo(
-                    quilometragem, 2025 - modelo.getAnoFabricacao()), quilometragem, precoBruto);
+            modelo.getAnoFabricacao(), modelo.getCor(), marca.getNome(), marca.getPaisOrigem(), marca.getCnpj());
     }
     
     public double calcularPrecoFinal(Veiculo veiculo){

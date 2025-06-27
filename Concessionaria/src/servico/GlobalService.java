@@ -13,9 +13,9 @@ import java.time.LocalDate;
 public class GlobalService {
     public LocalDate formatarData(String dataRecebida){
         String[] conjuntoData = dataRecebida.split("/");
-        LocalDate retornado = LocalDate.of(Integer.parseInt(conjuntoData[0]), 
+        LocalDate retornado = LocalDate.of(Integer.parseInt(conjuntoData[2]), 
                 Integer.parseInt(conjuntoData[1]), 
-                Integer.parseInt(conjuntoData[2]));
+                Integer.parseInt(conjuntoData[0]));
         return retornado;
     }
     

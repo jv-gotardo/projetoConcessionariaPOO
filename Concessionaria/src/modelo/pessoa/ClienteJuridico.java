@@ -13,7 +13,7 @@ public class ClienteJuridico extends Cliente {
     
     public ClienteJuridico(String nome, long telefone, String endereco, double rendaMensal, long cnpj){
         super(nome, telefone, endereco, rendaMensal);
-        cnpj = this.cnpj;
+        this.cnpj = cnpj;
     }
 
     public long getCnpj() {

@@ -24,7 +24,7 @@ public class LojaService {
     EstoqueService ess = new EstoqueService();
     VendaService vs = new VendaService();
     
-    public Loja criarLoja(){
+    public Loja criarLoja(Estoque estoque){
         String nome, endereco, cidade, estado;
         System.out.println("Criação de Loja");
         System.out.print("Nome: ");
@@ -35,8 +35,8 @@ public class LojaService {
         cidade = sc.nextLine();
         System.out.println("Estado: ");
         estado = sc.nextLine();
-        System.out.println("Adicione um estoque para a loja: ");
-        Estoque estoque = ess.criaEstoque();
+        System.out.println("O seguinte estoque será adicionado para a loja: ");
+        ess.listarVeiculosDisponiveis(estoque);
         System.out.println("Adicione pelo menos um funcionário do tipo vendedor: ");
         Vendedor vendedor = (Vendedor) ps.criarFuncionario();
         System.out.println("Adicione um gerente: ");

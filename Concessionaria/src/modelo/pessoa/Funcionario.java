@@ -6,8 +6,8 @@ public abstract class Funcionario extends Pessoa {
     
     public Funcionario(String nome, long telefone, String endereco, long cpf, double salario){
         super(nome, telefone, endereco);
-        cpf = this.cpf;
-        salario = this.salario;
+        this.cpf = cpf;
+        this.salario = salario;
     }
 
     public long getCpf() {

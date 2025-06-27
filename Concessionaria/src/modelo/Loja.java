@@ -1,6 +1,5 @@
 package modelo;
 
-import modelo.pessoa.Funcionario;
 import java.util.List;
 import modelo.pessoa.Gerente;
 import modelo.pessoa.Vendedor;
@@ -14,25 +13,24 @@ public class Loja {
     private Gerente gerente;
     private List<Vendedor> vendedores;
     private List<Venda> vendas;
-    
-    public Loja(String nome, String endereco, String cidade, String estado, Estoque estoque, 
-            Gerente gerente, List<Vendedor> vendedores, List<Venda> vendas){
-        nome = this.nome;
-        endereco = this.endereco;
-        cidade = this.cidade;
-        estado = this.estado;
-        estoque = this.estoque;
-        gerente = this.gerente;
-        vendedores = this.vendedores;
-        vendas = this.vendas;
+
+    public Loja(String nome, String endereco, String cidade, String estado, Estoque estoque, Gerente gerente, List<Vendedor> vendedores, List<Venda> vendas) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.estoque = estoque;
+        this.gerente = gerente;
+        this.vendedores = vendedores;
+        this.vendas = vendas;
     }
-    
-    public Loja(String nome, String endereco, String cidade, String estado, Estoque estoque){
-        nome = this.nome;
-        endereco = this.endereco;
-        cidade = this.cidade;
-        estado = this.estado;
-        estoque = this.estoque;
+
+    public Loja(String nome, String endereco, String cidade, String estado, Estoque estoque) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.estoque = estoque;
     }
 
     public String getNome() {

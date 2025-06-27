@@ -13,7 +13,7 @@ public class ClienteFisico extends Cliente {
     
     public ClienteFisico(String nome, long telefone, String endereco, double rendaMensal, long cpf){
         super(nome, telefone, endereco, rendaMensal);
-        cpf = this.cpf;
+        this.cpf = cpf;
     }
 
     public long getCpf() {

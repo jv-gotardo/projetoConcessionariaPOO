@@ -13,17 +13,17 @@ public enum TipoVeiculo {
     MOTONETA("Motoneta"),
     MOTOCICLETA("Motocicleta"),
     TRICICLO("Triciclo"),
-    AUTOMOVEL("Automóvel"),
-    MICRO_ONIBUS("Micro-ônibus"),
-    ONIBUS("Ônibus"),
+    AUTOMOVEL("Automovel"),
+    MICRO_ONIBUS("Micro-onibus"),
+    ONIBUS("Onibus"),
     REBOQUE("Reboque"),
     SEMIRREBOQUE("Semirreboque"),
     CAMIONETA("Camioneta"),
-    CAMINHAO("Caminhão"),
+    CAMINHAO("Caminhao"),
     TRATOR("Trator"),
     QUADRICICLO("Quadriciclo"),
     CAMINHONETE("Caminhonete"),
-    UTILITARIO("Utilitário");
+    UTILITARIO("Utilitario");
     
     public final String CODIGO;
     

@@ -16,32 +16,30 @@ public class Financiamento {
     private double valorEntrada;
     private int numeroParcelas; 
     private double valorParcelaBruto; 
-    private static double juros; 
+    private double juros; 
     private double valorParcela = valorParcelaBruto + (valorParcelaBruto * juros);
     private String banco;
     private boolean aprovado; 
     private ModeloVenda modeloVenda;
     private LocalDate dataProximoPagamento;
     private boolean entradaPaga = false;
-    
-    public Financiamento(Venda venda, double valorEntrada, String banco, boolean aprovado){
-        venda = this.venda;
-        valorEntrada = this.valorEntrada;
-        banco = this.banco;
-        aprovado = this.aprovado; 
-        modeloVenda = ModeloVenda.A_VISTA;
+
+    public Financiamento(Venda venda, double valorEntrada, String banco, boolean aprovado) {
+        this.venda = venda;
+        this.valorEntrada = valorEntrada;
+        this.banco = banco;
+        this.aprovado = aprovado;
     }
-    
-    public Financiamento(Venda venda, double valorEntrada, int numeroParcelas, double valorParcelaBruto,
-            double juros, String banco, boolean aprovado, ModeloVenda modeloVenda){
-        venda = this.venda;
-        valorEntrada = this.valorEntrada;
-        numeroParcelas = this.numeroParcelas;
-        valorParcelaBruto = this.valorParcelaBruto;
-        juros = this.juros;
-        banco = this.banco;
-        aprovado = this.aprovado;
-        modeloVenda = this.modeloVenda;
+
+    public Financiamento(Venda venda, double valorEntrada, int numeroParcelas, double valorParcelaBruto, String banco, boolean aprovado, ModeloVenda modeloVenda, double juros) {
+        this.venda = venda;
+        this.valorEntrada = valorEntrada;
+        this.numeroParcelas = numeroParcelas;
+        this.valorParcelaBruto = valorParcelaBruto;
+        this.banco = banco;
+        this.aprovado = aprovado;
+        this.modeloVenda = modeloVenda;
+        this.juros = juros;
     }
 
     public double getValorParcela() {

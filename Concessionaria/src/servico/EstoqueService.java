@@ -21,8 +21,9 @@ public class EstoqueService {
         int capacidadeTotal, capacidadeOcupada = 0;
         System.out.println("Criação de Estoque");
         System.out.print("Capacidade Total: ");
-        capacidadeTotal = sc.nextInt(); sc.nextInt();
-        return new Estoque(capacidadeTotal, capacidadeOcupada);
+        capacidadeTotal = sc.nextInt(); sc.nextLine();
+        List<Veiculo> veiculosDisponiveis = new ArrayList();
+        return new Estoque(veiculosDisponiveis, capacidadeTotal, capacidadeOcupada);
     }
     
     public boolean capacidadeMaxima(Estoque estoque){

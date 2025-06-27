@@ -24,14 +24,13 @@ public class Venda {
     private LocalDate dataVenda;
     private Financiamento financiamento;
     private List<Pagamento> pagamentos;
-    
-    public Venda(Veiculo veiculo, Vendedor vendedor, Cliente cliente, int quantidade,
-            LocalDate dataVenda){
-        veiculo = this.veiculo;
-        vendedor = this.vendedor;
-        cliente = this.cliente;
-        quantidade = this.quantidade;
-        dataVenda = this.dataVenda; 
+
+    public Venda(Veiculo veiculo, Vendedor vendedor, Cliente cliente, int quantidade, LocalDate dataVenda) {
+        this.veiculo = veiculo;
+        this.vendedor = vendedor;
+        this.cliente = cliente;
+        this.quantidade = quantidade;
+        this.dataVenda = dataVenda;
         precoFinal = quantidade * veiculo.getPrecoBruto();
     }
 
