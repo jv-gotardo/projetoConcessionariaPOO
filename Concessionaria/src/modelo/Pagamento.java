@@ -65,4 +65,11 @@ public class Pagamento {
     public void setStatusPagamento(StatusPagamento statusPagamento) {
         this.statusPagamento = statusPagamento;
     }
+
+    @Override
+    public String toString() {
+        return "Pagamento{" + "venda=" + venda + ", tipoPagamento=" + tipoPagamento + 
+                ", valorPago=" + valorPago + ", dataPagamento=" + dataPagamento + 
+                ", statusPagamento=" + statusPagamento + '}';
+    }
 }

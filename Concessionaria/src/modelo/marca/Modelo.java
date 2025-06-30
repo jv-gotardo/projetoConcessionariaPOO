@@ -65,4 +65,11 @@ public class Modelo extends Marca {
     public Marca getMarca(){
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Modelo{" + "nomeModelo=" + nomeModelo + ", tipoVeiculo=" + tipoVeiculo + 
+                ", tipoCarroceria=" + tipoCarroceria + ", transmissao=" + transmissao + 
+                ", anoFabricacao=" + anoFabricacao + ", cor=" + cor + '}';
+    }
 }

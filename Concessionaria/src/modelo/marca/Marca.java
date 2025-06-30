@@ -43,4 +43,9 @@ public class Marca {
     public void setCnpj(long cnpj) {
         this.cnpj = cnpj;
     }
+
+    @Override
+    public String toString() {
+        return "Marca{" + "nome=" + nome + ", paisOrigem=" + paisOrigem + ", cnpj=" + cnpj + '}';
+    }
 }

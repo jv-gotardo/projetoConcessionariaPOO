@@ -34,4 +34,13 @@ public abstract class Pessoa {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + ", telefone=" + telefone + ", endereco=" + endereco + '}';
+    }
+    
+    public Pessoa(){
+        
+    }
 }

@@ -54,4 +54,11 @@ public class Contrato {
     public void setDataVencimentoPrevista(LocalDate dataVencimentoPrevista) {
         this.dataVencimentoPrevista = dataVencimentoPrevista;
     }
+
+    @Override
+    public String toString() {
+        return "Contrato{" + "financiamento=" + financiamento + ", termos_Contrato=" + 
+                termos_Contrato + ", dataAssinatura=" + dataAssinatura + ", dataVencimentoPrevista=" + 
+                dataVencimentoPrevista + '}';
+    }
 }

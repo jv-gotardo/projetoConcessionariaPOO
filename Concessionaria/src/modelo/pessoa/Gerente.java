@@ -20,6 +20,8 @@ public class Gerente extends Funcionario{
         this.tempoCargo = tempoCargo;
         this.bonusTempoCargo = bonusTempoCargo;
     }
+    
+    public Gerente(){}
 
     public LocalDate getTempoCargo() {
         return tempoCargo;
@@ -36,4 +38,9 @@ public class Gerente extends Funcionario{
     public void setBonusTempoCargo(double bonusTempoCargo) {
         this.bonusTempoCargo = bonusTempoCargo;
     }  
+
+    @Override
+    public String toString() {
+        return "Gerente{" + "tempoCargo=" + tempoCargo + ", bonusTempoCargo=" + bonusTempoCargo + '}';
+    }
 }

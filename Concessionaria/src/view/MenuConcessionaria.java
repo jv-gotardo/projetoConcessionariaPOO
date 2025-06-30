@@ -12,11 +12,12 @@ import modelo.marca.Marca;
  *
  * @author jvito
  */
-public class Menu { 
+public class MenuConcessionaria { 
     List<String> opcoesDisponiveis = new ArrayList();
+    ServiceLocator serviceLocator = new ServiceLocator();
     Scanner sc = new Scanner(System.in);
     boolean continuar = true;
-    ServiceLocator sl = new ServiceLocator();
+    CoordenadorAcoes ca = new CoordenadorAcoes(serviceLocator, opcoesDisponiveis);
     
     public void chamarMenu(){
         opcoesDisponiveis.add("Criar marca");
@@ -38,13 +39,10 @@ public class Menu {
                 continuar = false;
             }else if(escolha >= 1 && escolha <= opcoesDisponiveis.size()){
                 String acao = opcoesDisponiveis.get(escolha - 1);
-                executarAcao(acao, sc);
+                ca.executarAcao(acao, sc);
             }else{
                 System.out.println("Opção inválida.\n");
             }
         }
     }
-    
-    private void executarAcao(String acao, Scanner sc){
-            }
 }

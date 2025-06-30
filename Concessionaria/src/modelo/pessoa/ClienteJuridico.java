@@ -23,4 +23,9 @@ public class ClienteJuridico extends Cliente {
     public void setCnpj(long cnpj) {
         this.cnpj = cnpj;
     }
+
+    @Override
+    public String toString() {
+        return "ClienteJuridico{" + "cnpj=" + cnpj + '}';
+    }
 }

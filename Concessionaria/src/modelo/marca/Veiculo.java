@@ -52,4 +52,12 @@ public class Veiculo extends Modelo {
     public void setChassi(int chassi) {
         this.chassi = chassi;
     }
+
+    @Override
+    public String toString() {
+        return "Veiculo{" + "chassi=" + chassi + ", status=" + status + 
+                ", quilometragem=" + quilometragem + ", precoBruto=" + precoBruto + '}';
+    }
+    
+    
 }

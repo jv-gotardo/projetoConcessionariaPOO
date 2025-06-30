@@ -96,4 +96,11 @@ public class Loja {
     public void setVendas(List<Venda> vendas) {
         this.vendas = vendas;
     }
+
+    @Override
+    public String toString() {
+        return "Loja{" + "nome=" + nome + ", endereco=" + endereco + ", cidade=" + cidade + 
+                ", estado=" + estado + ", estoque=" + estoque + ", gerente=" + gerente + 
+                ", vendedores=" + vendedores + ", vendas=" + vendas + '}';
+    }
 }

@@ -23,4 +23,9 @@ public class ClienteFisico extends Cliente {
     public void setCpf(long cpf) {
         this.cpf = cpf;
     }
+
+    @Override
+    public String toString() {
+        return "ClienteFisico{" + "cpf=" + cpf + '}';
+    }
 }

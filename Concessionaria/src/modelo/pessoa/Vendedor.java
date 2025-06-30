@@ -23,4 +23,9 @@ public class Vendedor extends Funcionario{
     public void setComissaoPorVenda(double comissaoPorVenda) {
         this.comissaoPorVenda = comissaoPorVenda;
     }
+
+    @Override
+    public String toString() {
+        return "Vendedor{" + "comissaoPorVenda=" + comissaoPorVenda + '}';
+    }
 }

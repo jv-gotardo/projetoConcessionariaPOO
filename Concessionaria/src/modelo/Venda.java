@@ -120,4 +120,12 @@ public class Venda {
         }
         return Objects.equals(this.dataVenda, other.dataVenda);
     }
+
+    @Override
+    public String toString() {
+        return "Venda{" + "veiculo=" + veiculo + ", vendedor=" + vendedor + ", cliente=" + 
+                cliente + ", quantidade=" + quantidade + ", precoFinal=" + precoFinal + 
+                ", dataVenda=" + dataVenda + ", financiamento=" + financiamento + 
+                ", pagamentos=" + pagamentos + '}';
+    }
 }

@@ -23,4 +23,9 @@ public class Cliente extends Pessoa{
     public void setRendaMensal(double rendaMensal) {
         this.rendaMensal = rendaMensal;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "rendaMensal=" + rendaMensal + '}';
+    }
 }

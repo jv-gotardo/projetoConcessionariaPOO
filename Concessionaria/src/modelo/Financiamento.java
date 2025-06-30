@@ -125,4 +125,13 @@ public class Financiamento {
     public void setEntradaPaga(boolean entradaPaga) {
         this.entradaPaga = entradaPaga;
     }
+
+    @Override
+    public String toString() {
+        return "Financiamento{" + "venda=" + venda + ", valorEntrada=" + valorEntrada + 
+                ", numeroParcelas=" + numeroParcelas + ", valorParcelaBruto=" + valorParcelaBruto + 
+                ", juros=" + juros + ", valorParcela=" + valorParcela + ", banco=" + banco + 
+                ", aprovado=" + aprovado + ", modeloVenda=" + modeloVenda + ", dataProximoPagamento=" + 
+                dataProximoPagamento + ", entradaPaga=" + entradaPaga + '}';
+    }
 }

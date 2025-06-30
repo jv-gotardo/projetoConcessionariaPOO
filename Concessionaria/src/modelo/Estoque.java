@@ -1,6 +1,5 @@
 package modelo;
 
-import java.util.ArrayList;
 import modelo.marca.Veiculo;
 import java.util.List;
 
@@ -42,5 +41,10 @@ public class Estoque {
 
     public void setCapacidadeOcupada(int capacidadeOcupada) {
         this.capacidadeOcupada = capacidadeOcupada;
+    }
+
+    @Override
+    public String toString() {
+        return "Estoque{" + "veiculosDisponiveis=" + veiculosDisponiveis + ", capacidadeTotal=" + capacidadeTotal + ", capacidadeOcupada=" + capacidadeOcupada + '}';
     }
 }

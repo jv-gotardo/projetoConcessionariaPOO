@@ -8,6 +8,7 @@ import locators.ServiceLocator;
 import modelo.Estoque;
 import modelo.Financiamento;
 import modelo.Loja;
+import modelo.Pagamento;
 import modelo.Venda;
 import modelo.marca.Marca;
 import modelo.marca.Modelo;
@@ -48,9 +49,10 @@ public class CoordenadorAcoes {
             case "Demitir vendedor" -> acaoDemitirVendedor(sc);
             case "Criar venda" -> acaoCriarVenda(sc);
             case "Criar financiamento" -> acaoCriarFinanciamento(sc);
+            case "Validar financiamento" -> acaoValidarFinanciamento(sc);
             case "Gerar contrato" -> acaoGerarContrato(sc);
             case "Pagar entrada" -> acaoPagarEntrada(sc);
-            case "Realizar pagamento" -> acaoRealizarPagamento(sc);
+            case "Registrar pagamento" -> acaoRegistrarPagamento(sc);
         }
     }
     
@@ -146,11 +148,12 @@ public class CoordenadorAcoes {
         Modelo modelo = modeloEscolhido.get();
 
         BancoObjetos.salvar(ModelLocator.VEICULO, sl.veiculoService.criaVeiculo(marca, modelo));
-        opcoesDisponiveis.add("Adicionar veiculo ao estoque");
+        opcoesDisponiveis.add("Criar estoque");
     }
     
     public void acaoCriarEstoque(Scanner sc){
         BancoObjetos.salvar(ModelLocator.ESTOQUE, sl.estoqueService.criaEstoque());
+        opcoesDisponiveis.add("Adicionar veiculo ao estoque");
         opcoesDisponiveis.add("Criar loja");
     }
     
@@ -341,10 +344,55 @@ public class CoordenadorAcoes {
         sl.financiamentoService.atualizarFinanciamento(financiamento.get(), cliente.get());
         opcoesDisponiveis.add("Gerar contrato");
     }
-    //gerarContrato
-    //pagarEntrada
-    //criarPagamento 
     
+    public void acaoGerarContrato(Scanner sc){
+        Optional<Cliente> cliente = selecionarCliente(sc);
+        Optional<Financiamento> financiamento = selecionarFinanciamento(sc);
+        
+        if(cliente.isEmpty()){
+            System.out.println("O cliente não foi encontrado. ");
+            return;
+        }
+        if(financiamento.isEmpty()){
+            System.out.println("O financiamento não foi encontrado. ");
+            return;
+        }
+        
+        BancoObjetos.salvar(ModelLocator.CONTRATO, sl.contratoService.gerarContrato(
+                financiamento.get(), cliente.get()));
+        opcoesDisponiveis.add("Pagar entrada");
+    }
     
+    public void acaoPagarEntrada(Scanner sc){
+        //    public boolean pagarEntrada(Financiamento financiamento){
+        Optional<Financiamento> financiamento = selecionarFinanciamento(sc);
+        
+        if(financiamento.isEmpty()){
+            System.out.println("O financiamento não foi encontrado");
+            return;
+        }
+        sl.pagamentoService.pagarEntrada(financiamento.get());
+        opcoesDisponiveis.add("Registrar pagamento");
+    }
+    
+    public void acaoRegistrarPagamento(Scanner sc){
+        Optional<Financiamento> financiamento = selecionarFinanciamento(sc);
+        
+        if(financiamento.isEmpty()){
+            System.out.println("O financiamento não foi encontrado");
+        }
+        
+        Pagamento pagamento = sl.pagamentoService.criarPagamento(financiamento.get().getVenda());
+        BancoObjetos.salvar(ModelLocator.PAGAMENTO, sl.pagamentoService.
+                criarPagamento(pagamento.getVenda()));
+        
+        boolean validacao = sl.pagamentoService.validarPagamento(financiamento.get().
+                getVenda(), pagamento, financiamento.get());
+        
+        if(validacao){
+            sl.pagamentoService.adicionarPagamento(financiamento.get().getVenda(), pagamento);
+            BancoObjetos.remover(ModelLocator.PAGAMENTO, pagamento);
+        }
+    }
 }
 
