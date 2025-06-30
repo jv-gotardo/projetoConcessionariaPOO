@@ -12,6 +12,7 @@ import modelo.Financiamento;
 import modelo.Pagamento;
 import modelo.Venda;
 import modelo.enums.StatusPagamento;
+import modelo.pessoa.Cliente;
 
 /**
  *
@@ -22,8 +23,8 @@ public class ContratoService {
     FinanciamentoService fs = new FinanciamentoService();
     VendaService vs = new VendaService();
     
-    public Contrato gerarContrato(Financiamento financiamento){
-        if(!fs.aprovarFinanciamento(financiamento)){
+    public Contrato gerarContrato(Financiamento financiamento, Cliente cliente){
+        if(!fs.aprovarFinanciamento(financiamento, cliente)){
             System.out.println("O contrato não pode ser gerado sem aprovação do financiamento.");
             return null;
         }
@@ -44,9 +45,11 @@ public class ContratoService {
         }
     }
     
-    public void encerrarContrato(Financiamento financiamento){
+    public boolean encerrarContrato(Financiamento financiamento){
         if(financiamento.getNumeroParcelas() == 0){
             System.out.println("O contrato foi encerrado após o fim dos pagamentos.");
+            return true;
         }
+        return false;
     }
 }

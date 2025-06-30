@@ -51,7 +51,7 @@ public class Modelo extends Marca {
     public void setTipoCarroceria(TipoCarroceria tipoCarroceria) {
         this.tipoCarroceria = tipoCarroceria;
     }
-
+    
     public Modelo(String nomeModelo, TipoVeiculo tipoVeiculo, TipoCarroceria tipoCarroceria, String transmissao, int anoFabricacao, String cor, String nome, String paisOrigem, long cnpj) {
         super(nome, paisOrigem, cnpj);
         this.nomeModelo = nomeModelo;
@@ -62,6 +62,7 @@ public class Modelo extends Marca {
         this.cor = cor;
     }
     
-    
-    
+    public Marca getMarca(){
+        return this;
+    }
 }

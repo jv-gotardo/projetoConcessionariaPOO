@@ -20,6 +20,7 @@ import modelo.enums.TipoPagamento;
 public class PagamentoService {
     VendaService vs = new VendaService();
     GlobalService gs = new GlobalService();
+    FinanciamentoService fs = new FinanciamentoService();
     Scanner sc = new Scanner(System.in);
     public Pagamento criarPagamento(Venda venda){
         String tipoPagamento, dataPagamento;
@@ -64,6 +65,9 @@ public class PagamentoService {
             System.out.println("Pagamento aprovado!");
             pagamento.setStatusPagamento(StatusPagamento.PAGO);
             financiamento.setNumeroParcelas(financiamento.getNumeroParcelas()-1);
+            System.out.println("Valor da parcela paga: R$" + financiamento.getValorParcela());
+            fs.recalcularParcela(financiamento);
+            System.out.println("Valor da próxima parcela: R$" + financiamento.getValorParcela());
             adicionarPagamento(venda, pagamento);
         }
         return true;

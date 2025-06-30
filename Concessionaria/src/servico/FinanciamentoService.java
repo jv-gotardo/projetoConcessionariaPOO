@@ -9,6 +9,7 @@ import java.util.Scanner;
 import modelo.Financiamento;
 import modelo.Venda;
 import modelo.enums.ModeloVenda;
+import modelo.pessoa.Cliente;
 
 /**
  *
@@ -63,6 +64,7 @@ public class FinanciamentoService {
             juros = 0;
         }
         valorParcelaBruto = (venda.getPrecoFinal() - valorEntrada) / numeroParcelas;
+        valorParcelaBruto = Math.round(valorParcelaBruto * 100.0) / 100.0;
         System.out.println("O valor da parcela bruto é R$" + valorParcelaBruto);
         Financiamento financiamento = new Financiamento(
                 venda, valorEntrada, numeroParcelas, valorParcelaBruto, banco, false, modeloVenda, juros);
@@ -82,13 +84,20 @@ public class FinanciamentoService {
         System.out.println("Valor total" + financiamento.getVenda().getPrecoFinal());
     }
     
-    public boolean aprovarFinanciamento(Financiamento financiamento){
-        return defineNumeroParcelas(financiamento.getModeloVenda()) != -1;
+    public boolean aprovarFinanciamento(Financiamento financiamento, Cliente cliente){
+        return defineNumeroParcelas(financiamento.getModeloVenda()) != -1 &&
+                cliente.getRendaMensal() > financiamento.getValorParcela();
     }
     
-    public void atualizarFinanciamento(Financiamento financiamento){
-        if(aprovarFinanciamento(financiamento)){
+    public void atualizarFinanciamento(Financiamento financiamento, Cliente cliente){
+        if(aprovarFinanciamento(financiamento, cliente)){
             financiamento.setAprovado(true);
         }
+    }
+    
+    public double recalcularParcela(Financiamento financiamento){
+        financiamento.setValorParcela(financiamento.getValorParcela() + 
+                (financiamento.getValorParcela() * financiamento.getJuros()));
+        return financiamento.getValorParcela();
     }
 }

@@ -37,12 +37,9 @@ public class LojaService {
         estado = sc.nextLine();
         System.out.println("O seguinte estoque será adicionado para a loja: ");
         ess.listarVeiculosDisponiveis(estoque);
-        System.out.println("Adicione pelo menos um funcionário do tipo vendedor: ");
-        Vendedor vendedor = (Vendedor) ps.criarFuncionario();
         System.out.println("Adicione um gerente: ");
         Gerente gerente = (Gerente) ps.criarFuncionario();
         List<Vendedor> vendedores = new ArrayList();
-        vendedores.add(vendedor);
         List<Venda> vendas = new ArrayList();
         Loja loja = new Loja(nome, endereco, cidade, estado, estoque, gerente, vendedores, vendas);
         lojaCriada = true;
@@ -58,16 +55,21 @@ public class LojaService {
         }
     }
     
-    public void demitirVendedor(Loja loja, Vendedor vendedor){
+    public Vendedor demitirVendedor(Loja loja, Vendedor vendedor){
         System.out.print("Confirme a demissão de " + vendedor.getNome() + " (S/N): ");
         if(sc.nextLine().equals("S")){
             for (Vendedor v : loja.getVendedores()){
                 if(v.getNome().equals(vendedor.getNome())){
                     loja.getVendedores().remove(vendedor);
-                    break;
+                    return vendedor;
                 }
             }
         }
+        return null;
+    }
+    
+    public void adicionarVenda(Loja loja, Venda venda){
+        loja.getVendas().add(venda);
     }
     
     public void listarFuncionarios(Loja loja){

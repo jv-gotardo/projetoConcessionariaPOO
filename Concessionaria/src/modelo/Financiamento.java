@@ -17,7 +17,7 @@ public class Financiamento {
     private int numeroParcelas; 
     private double valorParcelaBruto; 
     private double juros; 
-    private double valorParcela = valorParcelaBruto + (valorParcelaBruto * juros);
+    private double valorParcela = valorParcelaBruto + (valorParcelaBruto * (juros/100));
     private String banco;
     private boolean aprovado; 
     private ModeloVenda modeloVenda;

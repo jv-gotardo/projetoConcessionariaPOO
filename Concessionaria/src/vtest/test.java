@@ -1,10 +1,12 @@
+package vtest;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package view;
 
-import controller.ServiceLocator;
+
+import locators.ServiceLocator;
 import modelo.marca.Marca;
 import modelo.marca.Modelo;
 import modelo.marca.Veiculo;
@@ -38,6 +40,7 @@ public class test {
         //Teste de venda
         Cliente cliente = sl.pessoaService.criarCliente();
         Vendedor vendedor = (Vendedor) sl.pessoaService.criarFuncionario();
+        sl.lojaService.contratarVendedor(loja, vendedor);
         sl.estoqueService.listarVeiculosDisponiveis(estoque);
         Venda venda = sl.vendaService.criarVenda(veiculo, vendedor, cliente, loja);
         Financiamento financiamento = sl.financiamentoService.criarFinanciamento(venda);
@@ -46,6 +49,7 @@ public class test {
         sl.pagamentoService.pagarEntrada(financiamento);
         Pagamento pagamento = sl.pagamentoService.criarPagamento(venda);
         sl.pagamentoService.validarPagamento(venda, pagamento, financiamento);
+        sl.pagamentoService.pagarEntrada(financiamento);
         
         //Verificação das atualizações
         financiamento.getNumeroParcelas();
